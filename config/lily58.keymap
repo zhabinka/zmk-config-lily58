@@ -82,6 +82,13 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
         };
+
+        td_slash: td_slash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp PIPE>;
+        };
     };
 
     keymap {
@@ -96,11 +103,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp GRAVE  &kp N1        &kp N2       &kp N3             &kp N4       &kp N5                           &kp N6    &kp N7        &kp N8     &kp N9      &kp N0    &kp EQUAL
-&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                            &kp Y     &kp U         &kp I      &kp O       &kp P     &kp MINUS
-&kp LCTRL  &hrm LCTRL A  &hrm LGUI S  &hrm LEFT_SHIFT D  &hrm LGUI F  &kp G                            &h_morph  &kp J         &kp K      &kp L       &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z         &kp X        &kp C              &kp V        &kp B     &kp LBKT     &kp RBKT  &kp N     &kp M         &td_comma  &td_period  &kp FSLH  &kp BACKSLASH
-                                      &kp LALT           &lt 2 ESC    &kp LGUI  &kp SPACE    &kp RET   &kp RGUI  &lt 1 DELETE  &kp RALT
+&kp GRAVE  &kp N1        &kp N2       &kp N3             &kp N4       &kp N5                           &kp N6    &kp N7        &kp N8     &kp N9      &kp N0     &kp EQUAL
+&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                            &kp Y     &kp U         &kp I      &kp O       &kp P      &kp MINUS
+&kp LCTRL  &hrm LCTRL A  &hrm LGUI S  &hrm LEFT_SHIFT D  &hrm LGUI F  &kp G                            &h_morph  &kp J         &kp K      &kp L       &kp SEMI   &kp SQT
+&kp LSHFT  &kp Z         &kp X        &kp C              &kp V        &kp B     &kp LBKT     &kp RBKT  &kp N     &kp M         &td_comma  &td_period  &td_slash  &kp BACKSLASH
+                                      &kp LALT           &lt 2 ESC    &kp LGUI  &kp SPACE    &kp RET   &kp RGUI  &lt 1 DELETE  &kp LSHFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
