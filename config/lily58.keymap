@@ -103,7 +103,7 @@
         backspace_morph: backspace_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_MORPH";
-            bindings = <&hmr SPACE RGUI>, <&kp BACKSPACE>;
+            bindings = <&hmr RGUI SPACE>, <&kp BACKSPACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
