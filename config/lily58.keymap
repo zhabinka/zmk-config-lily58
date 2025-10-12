@@ -103,7 +103,7 @@
         backspace_morph: backspace_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "BACKSPACE_MORPH";
-            bindings = <&kp RGUI>, <&kp BACKSPACE>;
+            bindings = <&hmr SPACE RGUI>, <&kp BACKSPACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
@@ -161,11 +161,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp GRAVE  &kp N1        &kp N2       &kp N3             &kp N4       &kp N5                                      &kp N6   &kp N7       &kp N8              &kp N9       &kp N0           &kp MINUS
-&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                                       &kp Y    &kp U        &kp I               &kp O        &kp P            &kp EQUAL
-&kp LCTRL  &hml LCTRL A  &hml LALT S  &hml LEFT_SHIFT D  &hml LGUI F  &kp G                                       &kp H    &hmr RGUI J  &hmr RIGHT_SHIFT K  &hmr RALT L  &hmr RCTRL SEMI  &backtic_morph
-&none      &kp Z         &kp X        &kp C              &kp V        &kp B   &kp LBKT           &kp BACKSPACE    &kp N    &kp M        &td_comma           &td_period   &td_slash        &kp BACKSLASH
-                                      &lt 2 ESCAPE       &none        &none   &hml LGUI SPACE    &hmr RGUI SPACE  &kp RET  &none        &lt 1 BACKSLASH
+&kp GRAVE  &kp N1        &kp N2       &kp N3             &kp N4       &kp N5                                       &kp N6   &kp N7       &kp N8              &kp N9       &kp N0           &kp MINUS
+&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                                        &kp Y    &kp U        &kp I               &kp O        &kp P            &kp EQUAL
+&kp LCTRL  &hml LCTRL A  &hml LALT S  &hml LEFT_SHIFT D  &hml LGUI F  &kp G                                        &kp H    &hmr RGUI J  &hmr RIGHT_SHIFT K  &hmr RALT L  &hmr RCTRL SEMI  &backtic_morph
+&none      &kp Z         &kp X        &kp C              &kp V        &kp B   &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma           &td_period   &td_slash        &kp BACKSLASH
+                                      &lt 2 ESCAPE       &none        &none   &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
