@@ -138,6 +138,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
+        vim_exit_morph: vim_exit_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VIM_EXIT_MORPH";
+            bindings = <&kp EQUAL>, <&macro_vim_exit>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -146,6 +155,13 @@
             #binding-cells = <0>;
             bindings = <&kp PIPE &kp GREATER_THAN>;
             label = "MACRO_PIPE";
+        };
+
+        macro_vim_exit: macro_vim_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT_BRACKET)>;
+            label = "MACRO_VIM_EXIT";
         };
     };
 
@@ -162,7 +178,7 @@
 
             bindings = <
 &kp GRAVE  &kp N1        &kp N2       &kp N3             &kp N4       &kp N5                                       &kp N6   &kp N7       &kp N8              &kp N9       &kp N0           &kp MINUS
-&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                                        &kp Y    &kp U        &kp I               &kp O        &kp P            &kp EQUAL
+&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                                        &kp Y    &kp U        &kp I               &kp O        &kp P            &vim_exit_morph
 &kp LCTRL  &hml LCTRL A  &hml LALT S  &hml LEFT_SHIFT D  &hml LGUI F  &kp G                                        &kp H    &hmr RGUI J  &hmr RIGHT_SHIFT K  &hmr RALT L  &hmr RCTRL SEMI  &backtic_morph
 &none      &kp Z         &kp X        &kp C              &kp V        &kp B   &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma           &td_period   &td_slash        &kp BACKSLASH
                                       &lt 2 ESCAPE       &none        &none   &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
