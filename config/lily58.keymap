@@ -32,7 +32,7 @@
 
         combo_right_bracket {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <21 22>;
+            key-positions = <21 20>;
             timeout-ms = <50>;
         };
 
@@ -147,6 +147,16 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
+
+        bracket_morph: bracket_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACKET_MORPH";
+            bindings = <&kp EQUAL>, <&kp LEFT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LGUI)>;
+        };
     };
 
     macros {
@@ -178,7 +188,7 @@
 
             bindings = <
 &kp GRAVE  &kp N1        &kp N2       &kp N3             &kp N4       &kp N5                                       &kp N6   &kp N7       &kp N8              &kp N9       &kp N0           &kp MINUS
-&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                                        &kp Y    &kp U        &kp I               &kp O        &kp P            &vim_exit_morph
+&kp TAB    &kp Q         &kp W        &kp E              &kp R        &kp T                                        &kp Y    &kp U        &kp I               &kp O        &kp P            &bracket_morph
 &kp LCTRL  &hml LCTRL A  &hml LALT S  &hml LEFT_SHIFT D  &hml LGUI F  &kp G                                        &kp H    &hmr RGUI J  &hmr RIGHT_SHIFT K  &hmr RALT L  &hmr RCTRL SEMI  &backtic_morph
 &none      &kp Z         &kp X        &kp C              &kp V        &kp B   &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma           &td_period   &td_slash        &kp BACKSLASH
                                       &lt 2 ESCAPE       &none        &none   &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
