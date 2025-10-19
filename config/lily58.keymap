@@ -225,5 +225,15 @@
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
+
+        numpad_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans     &trans  &trans  &trans  &kp MINUS     &kp MINUS
+&trans  &trans  &trans  &trans  &trans  &trans                           &kp N0     &kp N1  &kp N2  &kp N3  &kp PLUS      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &kp COMMA  &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp DOT    &kp N7  &kp N8  &kp N9  &kp SLASH     &trans
+                        &trans  &trans  &trans  &trans    &kp SPACE      &kp EQUAL  &trans  &trans
+            >;
+        };
     };
 };
