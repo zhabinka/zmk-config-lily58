@@ -148,33 +148,6 @@
             mods = <(MOD_LCTL|MOD_LGUI)>;
             keep-mods = <(MOD_LCTL|MOD_LGUI)>;
         };
-
-        x_morph: x_morph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "X_MORPH";
-            bindings = <&kp X>, <&macro_text_cut>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
-
-        c_morph: c_morph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "C_MORPH";
-            bindings = <&kp C>, <&macro_text_copy>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
-
-        v_morph: v_morph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "V_MORPH";
-            bindings = <&kp V>, <&macro_text_paste>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
-        };
     };
 
     macros {
@@ -183,34 +156,6 @@
             #binding-cells = <0>;
             bindings = <&kp PIPE &kp GREATER_THAN>;
             label = "MACRO_PIPE";
-        };
-
-        macro_text_copy: macro_text_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(C)>;
-            label = "TEXT_COPY";
-        };
-
-        macro_text_cut: macro_text_cut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(X)>;
-            label = "TEXT_CUT";
-        };
-
-        macro_text_paste: macro_text_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(V)>;
-            label = "TEXT_PASTE";
-        };
-
-        macro_text_select: macro_text_select {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(A)>;
-            label = "TEXT_SELECT";
         };
     };
 
