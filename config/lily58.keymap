@@ -148,6 +148,33 @@
             mods = <(MOD_LCTL|MOD_LGUI)>;
             keep-mods = <(MOD_LCTL|MOD_LGUI)>;
         };
+
+        x_morph: x_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "X_MORPH";
+            bindings = <&kp X>, <&macro_text_cut>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        c_morph: c_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "C_MORPH";
+            bindings = <&kp C>, <&macro_text_copy>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        v_morph: v_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "V_MORPH";
+            bindings = <&kp V>, <&macro_text_paste>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -158,11 +185,32 @@
             label = "MACRO_PIPE";
         };
 
-        macro_vim_exit: macro_vim_exit {
+        macro_text_copy: macro_text_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LEFT_BRACKET)>;
-            label = "MACRO_VIM_EXIT";
+            bindings = <&kp LG(C)>;
+            label = "TEXT_COPY";
+        };
+
+        macro_text_cut: macro_text_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>;
+            label = "TEXT_CUT";
+        };
+
+        macro_text_paste: macro_text_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "TEXT_PASTE";
+        };
+
+        macro_text_select: macro_text_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(A)>;
+            label = "TEXT_SELECT";
         };
     };
 
@@ -181,8 +229,8 @@
 &kp GRAVE   &kp N1        &kp N2         &kp N3        &kp N4       &kp N5                                       &kp N6   &kp N7       &kp N8           &kp N9        &kp N0           &kp MINUS
 &kp TAB     &kp Q         &kp W          &kp E         &kp R        &kp T                                        &kp Y    &kp U        &kp I            &kp O         &kp P            &bracket_morph
 &kp LCTRL   &hml LCTRL A  &hml LSHIFT S  &hml LALT D   &hml LGUI F  &kp G                                        &kp H    &hmr RGUI J  &hmr RALT K      &hmr RSHFT L  &hmr RCTRL SEMI  &backtic_morph
-&kp LSHIFT  &kp Z         &kp X          &kp C         &kp V        &kp B   &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma        &td_period    &td_slash        &kp BACKSLASH
-                                         &lt 2 ESCAPE  &none        &none   &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
+&kp LSHIFT  &mt LG(A) Z   &mt LG(X) X    &mt LG(C) C   &mt LG(V) V  &kp B   &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma        &td_period    &td_slash        &kp BACKSLASH
+                                         &lt 2 ESCAPE  &none        &mo 3   &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -228,11 +276,11 @@
 
         numpad_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                           &trans     &trans  &trans  &trans  &kp MINUS     &kp MINUS
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans     &trans  &trans  &trans  &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans                           &kp N0     &kp N1  &kp N2  &kp N3  &kp PLUS      &trans
 &trans  &trans  &trans  &trans  &trans  &trans                           &kp COMMA  &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp DOT    &kp N7  &kp N8  &kp N9  &kp SLASH     &trans
-                        &trans  &trans  &trans  &trans    &kp SPACE      &kp EQUAL  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp DOT    &kp N7  &kp N8  &kp N9  &trans        &trans
+                        &trans  &trans  &trans  &trans    &trans         &trans     &trans  &trans
             >;
         };
     };
