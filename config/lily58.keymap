@@ -238,6 +238,42 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        x_morph: x_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "X_MORPH";
+            bindings = <&mt LG(X) X>, <&kp LG(X)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        c_morph: c_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "C_MORPH";
+            bindings = <&mt LG(C) C>, <&kp LG(C)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        v_morph: v_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "V_MORPH";
+            bindings = <&mt LG(V) V>, <&kp LG(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        a_morph: a_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "A_MORPH";
+            bindings = <&hml LCTRL A>, <&kp LG(A)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -246,6 +282,34 @@
             #binding-cells = <0>;
             bindings = <&kp PIPE &kp GREATER_THAN>;
             label = "MACRO_PIPE";
+        };
+
+        macro_text_select: macro_text_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(A)>;
+            label = "MACRO_TEXT_SELECT";
+        };
+
+        macro_text_cut: macro_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>;
+            label = "MACRO_CUT";
+        };
+
+        macro_text_copy: macro_copy_text {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>;
+            label = "MACRO_COPY_TEXT";
+        };
+
+        macro_text_paste: macro_text_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "MACRO_TEXT_PASTE";
         };
     };
 
@@ -261,11 +325,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp GRAVE   &excl         &at_sign       &slah         &dollar      &percent                                       &caret   &ampersand   &asterisk        &l_par        &r_par           &kp MINUS
-&kp TAB     &kp Q         &kp W          &kp E         &kp R        &kp T                                          &kp Y    &kp U        &kp I            &kp O         &kp P            &bracket_morph
-&kp LCTRL   &hml LCTRL A  &hml LSHIFT S  &hml LALT D   &hml LGUI F  &kp G                                          &kp H    &hmr RGUI J  &hmr RALT K      &hmr RSHFT L  &hmr RCTRL SEMI  &backtic_morph
-&kp LSHIFT  &mt LG(A) Z   &mt LG(X) X    &mt LG(C) C   &mt LG(V) V  &kp B     &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma        &td_period    &td_slash        &kp BACKSLASH
-                                         &lt 2 ESCAPE  &caps_word   &mo 3     &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
+&kp GRAVE   &excl        &at_sign       &slah         &dollar      &percent                                       &caret   &ampersand   &asterisk        &l_par        &r_par           &kp MINUS
+&kp TAB     &kp Q        &kp W          &kp E         &kp R        &kp T                                          &kp Y    &kp U        &kp I            &kp O         &kp P            &bracket_morph
+&kp LCTRL   &a_morph     &hml LSHIFT S  &hml LALT D   &hml LGUI F  &kp G                                          &kp H    &hmr RGUI J  &hmr RALT K      &hmr RSHFT L  &hmr RCTRL SEMI  &backtic_morph
+&kp LSHIFT  &mt LG(A) Z  &x_morph       &c_morph      &v_morph     &kp B     &kp LBKT           &kp BACKSPACE     &kp N    &kp M        &td_comma        &td_period    &td_slash        &kp BACKSLASH
+                                        &lt 2 ESCAPE  &caps_word   &mo 3     &hml LGUI SPACE    &backspace_morph  &kp RET  &none        &lt 1 BACKSLASH
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
