@@ -43,23 +43,6 @@
     };
 
     behaviors {
-        ss_hs_modmorph: ss_hs_modmorph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SS_HS_MODMORPH";
-            bindings = <&kp M>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        kh_hs_tapdance: kh_hs_tapdance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "KH_HS_TAPDANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-        };
-
         hrm: hrm {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -115,6 +98,8 @@
             label = "td_period";
             #binding-cells = <0>;
             bindings = <&kp PERIOD>, <&kp COLON>;
+
+            tapping-term-ms = <300>;
         };
 
         td_comma: td_comma {
@@ -122,6 +107,8 @@
             label = "TD_COMMA";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+            tapping-term-ms = <400>;
         };
 
         td_slash: td_slash {
