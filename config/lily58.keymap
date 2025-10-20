@@ -274,7 +274,7 @@
         j_morph: j_morph {
             compatible = "zmk,behavior-mod-morph";
             label = "J_MORPH";
-            bindings = <&hmr RGUI J>, <&kp LS(TAB)>;
+            bindings = <&hmr RGUI J>, <&kp LC(TAB)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
