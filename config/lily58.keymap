@@ -107,6 +107,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
 
         td_period: td_period {
