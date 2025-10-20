@@ -375,11 +375,11 @@
 
         numpad_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                           &trans     &trans  &trans  &trans  &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                           &kp N0     &kp N1  &kp N2  &kp N3  &kp PLUS      &trans
-&trans  &trans  &trans  &trans  &trans  &trans                           &kp COMMA  &kp N4  &kp N5  &kp N6  &kp ASTERISK  &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp DOT    &kp N7  &kp N8  &kp N9  &trans        &trans
-                        &trans  &trans  &trans  &trans    &trans         &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans     &trans   &trans     &trans  &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &kp MINUS  &kp N7   &kp N8     &kp N9  &kp EQUAL     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &kp PLUS   &kp N4   &kp N5     &kp N6  &kp ASTERISK  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp UNDER  &kp N1   &kp N2     &kp N3  &kp FSLH      &trans
+                        &trans  &trans  &trans  &trans    &trans         &kp N0     &kp DOT  &kp COMMA
             >;
         };
     };
