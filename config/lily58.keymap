@@ -40,6 +40,16 @@
             bindings = <&macro_pipe>;
             key-positions = <47 48>;
         };
+
+        combo_chrome_tab_next {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <16 15>;
+        };
+
+        combo_chrome_tab_prev {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <14 15>;
+        };
     };
 
     behaviors {
