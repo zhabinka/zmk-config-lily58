@@ -93,24 +93,6 @@
             keep-mods = <(MOD_LALT)>;
         };
 
-        td_period: td_period {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_period";
-            #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&kp COLON>;
-
-            tapping-term-ms = <300>;
-        };
-
-        td_comma: td_comma {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_COMMA";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp SEMICOLON>;
-
-            tapping-term-ms = <400>;
-        };
-
         td_slash: td_slash {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SLASH";
@@ -338,7 +320,7 @@
 &kp GRAVE   &excl        &at_sign       &slah         &dollar      &percent                                       &caret    &ampersand   &asterisk        &l_par      &r_par           &kp MINUS
 &kp TAB     &kp Q        &kp W          &e_morph      &r_morph     &kp T                                          &kp Y     &kp U        &kp I            &kp O       &kp P            &bracket_morph
 &kp LCTRL   &a_morph     &hml LSHIFT S  &hml LALT D   &hml LGUI F  &kp G                                          &h_morph  &hmr RALT J  &hmr RSHFT K     &l_morph    &hmr RCTRL SEMI  &backtic_morph
-&kp LSHIFT  &mt LG(A) Z  &x_morph       &c_morph      &v_morph     &kp B     &kp LBKT           &kp BACKSPACE     &kp N     &kp M        &td_comma        &td_period  &td_slash        &kp BACKSLASH
+&kp LSHIFT  &mt LG(A) Z  &x_morph       &c_morph      &v_morph     &kp B     &kp LBKT           &kp BACKSPACE     &kp N     &kp M        &kp COMMA        &kp PERIOD  &td_slash        &kp BACKSLASH
                                         &lt 2 ESCAPE  &caps_word   &mo 3     &hml LGUI SPACE    &backspace_morph  &kp RET   &none        &lt 1 BACKSLASH
             >;
 
