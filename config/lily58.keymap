@@ -241,7 +241,7 @@
             bindings = <&hml LALT R>, <&kp LC(TAB)>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL|MOD_RGUI)>;
+            mods = <(MOD_LCTL)>;
         };
 
         h_morph: h_morph {
